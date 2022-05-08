@@ -7,14 +7,7 @@ This part includes implementations of the following methods:
 
 ## Introduction
 
-The goal of PySlowFast is to provide a high-performance, light-weight pytorch codebase provides state-of-the-art video backbones for video understanding research on different tasks (classification, detection, and etc). It is designed in order to support rapid implementation and evaluation of novel video research ideas. PySlowFast includes implementations of the following backbone network architectures:
-
-- SlowFast
-- Slow
-- C2D
-- I3D
-- Non-local Network
-- X3D
+This includes MViT for depth and velocity prediction.
 
 ## Installation
 

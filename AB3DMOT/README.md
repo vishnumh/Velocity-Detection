@@ -6,15 +6,6 @@ This part has AB3MOT.
 <img align="center" width="100%" src="https://github.com/xinshuoweng/AB3DMOT/blob/master/main1.gif">
 <img align="center" width="100%" src="https://github.com/xinshuoweng/AB3DMOT/blob/master/main2.gif">
 
-## Overview
-
-- [News](#news)
-- [Introduction](#introduction)
-- [Installation](#installation)
-- [Quick Demo on KITTI](#quick-demo-on-kitti)
-- [Benchmarking](#benchmarking)
-- [Acknowledgement](#acknowledgement)
-
 ## Introduction
 
 3D multi-object tracking (MOT) is an essential component technology for many real-time applications such as autonomous driving or assistive robotics. However, recent works for 3D MOT tend to focus more on developing accurate systems giving less regard to computational cost and system complexity. In contrast, this work proposes a simple yet accurate real-time baseline 3D MOT system. We use an off-the-shelf 3D object detector to obtain oriented 3D bounding boxes from the LiDAR point cloud. Then, a combination of 3D Kalman filter and Hungarian algorithm is used for state estimation and data association.

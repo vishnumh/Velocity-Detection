@@ -1,16 +1,9 @@
-# PySlowFast
+# MViT
 
-PySlowFast is an open source video understanding codebase from FAIR that provides state-of-the-art video classification models with efficient training. This repository includes implementations of the following methods:
+This part includes implementations of the following methods:
 
-- [SlowFast Networks for Video Recognition](https://arxiv.org/abs/1812.03982)
-- [Non-local Neural Networks](https://arxiv.org/abs/1711.07971)
-- [A Multigrid Method for Efficiently Training Video Models](https://arxiv.org/abs/1912.00998)
-- [X3D: Progressive Network Expansion for Efficient Video Recognition](https://arxiv.org/abs/2004.04730)
 - [Multiscale Vision Transformers](https://arxiv.org/abs/2104.11227.pdf)
 
-<div align="center">
-  <img src="demo/ava_demo.gif" width="600px"/>
-</div>
 
 ## Introduction
 
@@ -23,39 +16,78 @@ The goal of PySlowFast is to provide a high-performance, light-weight pytorch co
 - Non-local Network
 - X3D
 
-## Updates
- - We now support [Multiscale Vision Transformers](https://arxiv.org/abs/2104.11227.pdf) on Kinetics and ImageNet. See [`projects/mvit`](./projects/mvit/README.md) for more information.
- - We now support [PyTorchVideo](https://github.com/facebookresearch/pytorchvideo) models and datasets. See [`projects/pytorchvideo`](./projects/pytorchvideo/README.md) for more information.
- - We now support [X3D Models](https://arxiv.org/abs/2004.04730). See [`projects/x3d`](./projects/x3d/README.md) for more information.
- - We now support [Multigrid Training](https://arxiv.org/abs/1912.00998) for efficiently training video models. See [`projects/multigrid`](./projects/multigrid/README.md) for more information.
- - PySlowFast is released in conjunction with our [ICCV 2019 Tutorial](https://alexander-kirillov.github.io/tutorials/visual-recognition-iccv19/).
-
-## License
-
-PySlowFast is released under the [Apache 2.0 license](LICENSE).
-
-## Model Zoo and Baselines
-
-We provide a large set of baseline results and trained models available for download in the PySlowFast [Model Zoo](MODEL_ZOO.md).
-
 ## Installation
 
 Please find installation instructions for PyTorch and PySlowFast in [INSTALL.md](INSTALL.md). You may follow the instructions in [DATASET.md](slowfast/datasets/DATASET.md) to prepare the datasets.
 
-## Quick Start
+## Requirements
+- Python >= 3.8
+- Numpy
+- PyTorch >= 1.3
+- [fvcore](https://github.com/facebookresearch/fvcore/): `pip install 'git+https://github.com/facebookresearch/fvcore'`
+- [torchvision](https://github.com/pytorch/vision/) that matches the PyTorch installation.
+  You can install them together at [pytorch.org](https://pytorch.org) to make sure of this.
+- simplejson: `pip install simplejson`
+- GCC >= 4.9
+- PyAV: `conda install av -c conda-forge`
+- ffmpeg (4.0 is prefereed, will be installed along with PyAV)
+- PyYaml: (will be installed along with fvcore)
+- tqdm: (will be installed along with fvcore)
+- iopath: `pip install -U iopath` or `conda install -c iopath iopath`
+- psutil: `pip install psutil`
+- OpenCV: `pip install opencv-python`
+- torchvision: `pip install torchvision` or `conda install torchvision -c pytorch`
+- tensorboard: `pip install tensorboard`
+- moviepy: (optional, for visualizing video on tensorboard) `conda install -c conda-forge moviepy` or `pip install moviepy`
+- PyTorchVideo: `pip install pytorchvideo`
+- [Detectron2](https://github.com/facebookresearch/detectron2):
+- FairScale: `pip install 'git+https://github.com/facebookresearch/fairscale'`
+```
+    pip install -U torch torchvision cython
+    pip install -U 'git+https://github.com/facebookresearch/fvcore.git' 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
+    git clone https://github.com/facebookresearch/detectron2 detectron2_repo
+    pip install -e detectron2_repo
+    # You can find more details at https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md
+```
 
-Follow the example in [GETTING_STARTED.md](GETTING_STARTED.md) to start playing video models with PySlowFast.
+## Pytorch
+Please follow PyTorch official instructions to install from source:
+```
+git clone --recursive https://github.com/pytorch/pytorch
+```
 
-## Visualization Tools
+## PySlowFast
 
-We offer a range of visualization tools for the train/eval/test processes, model analysis, and for running inference with trained model.
-More information at [Visualization Tools](VISUALIZATION_TOOLS.md).
+Clone the PySlowFast Video Understanding repository.
+```
+git clone https://github.com/facebookresearch/slowfast
+```
+
+Add this repository to $PYTHONPATH.
+```
+export PYTHONPATH=/path/to/SlowFast/slowfast:$PYTHONPATH
+```
+
+### Build PySlowFast
+
+After having the above dependencies, run:
+```
+git clone https://github.com/facebookresearch/slowfast
+cd SlowFast
+python setup.py build develop
+```
+
+Now the installation is finished, run the pipeline with:
+```
+python tools/run_net.py --cfg configs/Kinetics/MViT.yaml NUM_GPUS 1 TRAIN.BATCH_SIZE 8 SOLVER.BASE_LR 0.0125 DATA.PATH_TO_DATA_DIR path_to_your_data_folder
+```
+
+
 
 ## Contributors
-PySlowFast is written and maintained by [Haoqi Fan](https://haoqifan.github.io/), [Yanghao Li](https://lyttonhao.github.io/), [Bo Xiong](https://www.cs.utexas.edu/~bxiong/), [Wan-Yen Lo](https://www.linkedin.com/in/wanyenlo/), [Christoph Feichtenhofer](https://feichtenhofer.github.io/).
+Will be added.
 
-## Citing PySlowFast
-If you find PySlowFast useful in your research, please use the following BibTeX entry for citation.
+## Reference
 ```BibTeX
 @misc{fan2020pyslowfast,
   author =       {Haoqi Fan and Yanghao Li and Bo Xiong and Wan-Yen Lo and

@@ -1,5 +1,5 @@
 # MonoFlex
-This part has implementation of Modifief monoflex.
+This part has implementation of Modified monoflex.
 
 Instead of learning decoupled representation of objects (8, 22 and 89) 3D keypoints are directly regressed.
 

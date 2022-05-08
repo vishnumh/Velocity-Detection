@@ -1,25 +1,7 @@
 # AB3DMOT
 
-<b>3D Multi-Object Tracking: A Baseline and New Evaluation Metrics (IROS 2020, ECCVW 2020)</b>
+This part has AB3MOT. 
 
-This repository contains the official python implementation for our full paper at IROS 2020 "[3D Multi-Object Tracking: A Baseline and New Evaluation Metrics](http://www.xinshuoweng.com/papers/AB3DMOT/proceeding.pdf)" and short paper "[AB3DMOT: A Baseline for 3D Multi-Object Tracking and New Evaluation Metrics](http://www.xinshuoweng.com/papers/AB3DMOT_eccvw/camera_ready.pdf)" at ECCVW 2020. Our project website and video demos are [here](http://www.xinshuoweng.com/projects/AB3DMOT/). If you find our paper or code useful, please cite our papers:
-
-```
-@article{Weng2020_AB3DMOT, 
-author = {Weng, Xinshuo and Wang, Jianren and Held, David and Kitani, Kris}, 
-journal = {IROS}, 
-title = {{3D Multi-Object Tracking: A Baseline and New Evaluation Metrics}}, 
-year = {2020} 
-}
-```
-```
-@article{Weng2020_AB3DMOT_eccvw, 
-author = {Weng, Xinshuo and Wang, Jianren and Held, David and Kitani, Kris}, 
-journal = {ECCVW}, 
-title = {{AB3DMOT: A Baseline for 3D Multi-Object Tracking and New Evaluation Metrics}}, 
-year = {2020} 
-}
-```
 
 <img align="center" width="100%" src="https://github.com/xinshuoweng/AB3DMOT/blob/master/main1.gif">
 <img align="center" width="100%" src="https://github.com/xinshuoweng/AB3DMOT/blob/master/main2.gif">
@@ -33,23 +15,9 @@ year = {2020}
 - [Benchmarking](#benchmarking)
 - [Acknowledgement](#acknowledgement)
 
-## News
-
-- Feb. 27, 2022: Added support to the nuScenes dataset and updated README
-- Feb. 26, 2022: Refactored code libraries and signficantly improved performance on KITTI 3D MOT
-- Aug. 06, 2020: Extend abstract (one oral) accepted at two ECCV workshops: [WiCV](https://sites.google.com/view/wicvworkshop-eccv2020/), [PAD](https://sites.google.com/view/pad2020/accepted-papers?authuser=0)
-- Jul. 05, 2020: 2D MOT results on KITTI for all three categories released
-- Jul. 04, 2020: Code modularized and a minor bug in KITTI evaluation for DontCare objects fixed
-- Jun. 30, 2020: Paper accepted at IROS 2020
-- Jan. 10, 2020: New metrics sAMOTA added and results updated
-- Aug. 21, 2019: Python 3 supported
-- Aug. 21, 2019: 3D MOT results on KITTI "Pedestrian" and "Cyclist" categories released
-- Aug. 19, 2019: A minor bug in orientation correction fixed
-- Jul. 9, 2019: Code and 3D MOT results on KITTI "Car" category released, support Python 2 only
-
 ## Introduction
 
-3D multi-object tracking (MOT) is an essential component technology for many real-time applications such as autonomous driving or assistive robotics. However, recent works for 3D MOT tend to focus more on developing accurate systems giving less regard to computational cost and system complexity. In contrast, this work proposes a simple yet accurate real-time baseline 3D MOT system. We use an off-the-shelf 3D object detector to obtain oriented 3D bounding boxes from the LiDAR point cloud. Then, a combination of 3D Kalman filter and Hungarian algorithm is used for state estimation and data association. Although our baseline system is a straightforward combination of standard methods, we obtain the state-of-the-art results. To evaluate our baseline system, we propose a new 3D MOT extension to the official KITTI 2D MOT evaluation along with two new metrics. Our proposed baseline method for 3D MOT establishes new state-of-the-art performance on 3D MOT for KITTI, improving the 3D MOTA from 72.23 of prior art to 76.47. Surprisingly, by projecting our 3D tracking results to the 2D image plane and compare against published 2D MOT methods, our system places 2nd on the official KITTI leaderboard. Also, our proposed 3D MOT method runs at a rate of 214.7 FPS, 65 times faster than the state-of-the-art 2D MOT system. 
+3D multi-object tracking (MOT) is an essential component technology for many real-time applications such as autonomous driving or assistive robotics. However, recent works for 3D MOT tend to focus more on developing accurate systems giving less regard to computational cost and system complexity. In contrast, this work proposes a simple yet accurate real-time baseline 3D MOT system. We use an off-the-shelf 3D object detector to obtain oriented 3D bounding boxes from the LiDAR point cloud. Then, a combination of 3D Kalman filter and Hungarian algorithm is used for state estimation and data association.
 
 ## Installation
 

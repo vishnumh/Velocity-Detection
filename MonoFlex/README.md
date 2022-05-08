@@ -1,5 +1,7 @@
 # MonoFlex
-Released code for Objects are Different: Flexible Monocular 3D Object Detection, CVPR21.
+This part has implementation of Modifief monoflex.
+
+Instead of learning decoupled representation of objects (8, 22 and 89) 3D keypoints are directly regressed.
 
 
 **Work in progress.**
@@ -65,13 +67,9 @@ The model will be evaluated periodically (can be adjusted in the CONFIG) during 
 CUDA_VISIBLE_DEVICES=0 python tools/plain_train_net.py --config runs/monoflex.yaml --ckpt YOUR_CKPT  --eval
 ```
 
-You can also specify --vis when evaluation to visualize the predicted heatmap and 3D bounding boxes. The pretrained model for train/val split and logs are [here](https://drive.google.com/drive/folders/1U60gUYp4JFOkG0VMefc4aVEMxtGM-AMu?usp=sharing).
 
-**Note:** we observe an obvious variation of the performance for different runs and we are still investigating possible solutions to stablize the results, though it may inevitably due to the utilized uncertainties.
+## Reference:
 
-## Citation
-
-If you find our work useful in your research, please consider citing:
 
 ```latex
 @InProceedings{MonoFlex,
@@ -83,7 +81,3 @@ If you find our work useful in your research, please consider citing:
     pages     = {3289-3298}
 }
 ```
-
-## Acknowlegment
-
-The code is heavily borrowed from [SMOKE](https://github.com/lzccccc/SMOKE) and thanks for their contribution.

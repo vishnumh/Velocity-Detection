@@ -16,4 +16,5 @@ Modified Monoflex results are fed into it.
 
 This part is derived from an older commit of slowfast, head is modified to regress for depth and velocity.
 
-### Please refer to the report for more details.
+### Please refer to the website for more details.
+https://sites.google.com/view/depth-and-velocity-mono-image/home

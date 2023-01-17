@@ -1,20 +1,14 @@
 # Depth-and-Velocity-Prediction-using-Monocular-Images
 
-## Plase navigate to modified Monoflex for running Monoflex.
-
-This part is largely dervied from Monoflex repository. 
+This project is largely dervied from Monoflex, AB3MOT and slowfast repository. 
 
 Three approaches are evaluated instead on decoupled representation of cars.
 
-## Please navigate to the AB3MOT to track and predict velocity after Monoflex.
+The MViT part is derived from an older commit of slowfast, head is modified to regress for depth and velocity.
 
-This part is largely derived from AB3MOT official repository.
+#### Inference for Monoflex + AB3MOT
 
-Modified Monoflex results are fed into it.
-
-## Please navigate to slowfast for depth and velocity regression using MViT
-
-This part is derived from an older commit of slowfast, head is modified to regress for depth and velocity.
+<img src="https://github.com/vishnumh/Velocity-Detection/blob/main/ab3dmot.gif" width="500">
 
 ### Please refer to the website for more details.
 https://sites.google.com/view/depth-and-velocity-mono-image/home
